@@ -36,12 +36,12 @@ class ExpenseTracker {
 
     static void addIncome(){
         try{
-        System.out.print("Enter income amount: ₹");
+        System.out.print("Enter income amount: Rs.");
         double amt = sc.nextDouble(); sc.nextLine();
         System.out.print("Enter source: ");
         String src = sc.nextLine();
         balance += amt;
-        records.add("Income  | " + src + " | ₹" + amt);
+        records.add("Income  | " + src + " | Rs." + amt);
         System.out.println("Income added.");
         }catch(InputMismatchException e){
             System.out.println("Invalid amount entered.");
@@ -50,14 +50,14 @@ class ExpenseTracker {
     }
     static void addExpense() {
         try{
-        System.out.print("Enter expense amount: ₹");
+        System.out.print("Enter expense amount: Rs.");
         double amt = sc.nextDouble(); sc.nextLine();
         System.out.print("Enter category: ");
         String cat = sc.nextLine();
         if (amt > balance) System.out.println("Not enough balance!");
         else {
             balance -= amt;
-            records.add("Expense | " + cat + " | ₹" + amt);
+            records.add("Expense | " + cat + " | Rs." + amt);
             System.out.println("Expense added.");
         }
         }catch(InputMismatchException e){
@@ -67,7 +67,7 @@ class ExpenseTracker {
     }
 
     static void viewBalance() {
-        System.out.println("Current Balance: ₹" + balance);
+        System.out.println("Current Balance: Rs." + balance);
     }
 
     static void viewHistory() {
@@ -77,4 +77,5 @@ class ExpenseTracker {
             records.forEach(System.out::println);
         }
     }
+
 }
